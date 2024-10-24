@@ -1,0 +1,40 @@
+SELECT * FROM security.Usuario
+
+SELECT COUNT(1) AS USER_EXISTS
+FROM [security].Usuario
+WHERE Usuario = 'mbarrera'
+AND Contrasena = 'EstaEsMiContra123!'
+
+SELECT COUNT(1) AS USER_EXISTS
+FROM [security].Usuario
+WHERE Usuario = 'SRivera'
+AND Contrasena = 'Admin123'
+
+
+
+SELECT * FROM business.Empleado
+
+INSERT INTO business.Empleado(Nombre, Direccion, Puesto, Carnet, Telefono)
+VALUES('STANLEY RIVERA','SANTA ANA','SUPERVISOR 2','BE11000','635732042')
+
+SELECT * FROM security.Usuario
+
+SELECT * FROM security.TipoUsuario
+
+SELECT * FROM business.Empleado
+
+SELECT * FROM business.DetalleFactura
+
+SELECT * FROM business.Factura
+
+SELECT * FROM business.Venta
+
+
+INSERT INTO security.TipoUsuario(Nombre, Descripcion, Activo)
+VALUES('Administrador','Usuario que administra todo el sistema',1)
+
+INSERT INTO security.TipoUsuario(Nombre, Descripcion, Activo)
+VALUES('Usuario','usuario estandar sin permisos de administracion',1)
+
+INSERT INTO security.Usuario(Usuario,Contrasena,IdEmpleado,IdTipoUsuario,Activo)
+VALUES('SRivera','Admin',1,1,1)
